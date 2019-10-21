@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Numberical Card Filpper</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="keywords" content="your keywords" />
+    <meta name="description" content="your description" />
+    <meta name="author" content="author,email" />
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.data-marker.css">
+    <style>
+    	button {
+    		margin: 10px 0;
+    	}
+    </style>
+</head>
+
+<body>
+	<h2>实例一 递增数据实例，带更新数值方法</h2>
+	<div class="dataStatistics" id="demo1"></div>
+	<button id="btn1">更新值</button>
+	<h2>实例二 递减数据实例，带更新数值方法</h2>
+	<div class="dataStatistics" id="demo2"></div>
+	<button id="btn2">更新值</button>
+	<h2>实例三 从零开始数据实例</h2>
+	<div class="dataStatistics" id="demo3"></div>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.data-marker.js"></script>
+	<script type="text/javascript">
+		$(function() {
+
+			// demo 1 ---------------------------------------
+			$("#demo1").dataMarker({
+				start: 956426, //初始数值
+				value: 6234567, //最大数字
+				len: 8, //数字是几位数
+				time: 10000 // 执行时间
+			});
+
+			$("#btn1").on("click", function() {
+				var flip = $("#demo1").data("dataMarker");
+				console.log(flip);
+				flip.updateFlip(8924399);
+			});
+
+			// demo 2 ---------------------------------------
+			$("#demo2").dataMarker({
+				start: 234523, //初始数值
+				value: 678, //最大数字
+				len: 6, //数字是几位数
+				time: 10000 // 执行时间
+			});
+
+			$("#btn2").on("click", function() {
+				var flip = $("#demo2").data("dataMarker");
+				console.log(flip);
+				flip.updateFlip(123);
+			});
+			// demo 3 ---------------------------------------
+			$("#demo3").dataMarker({
+				start: 0, //初始数值
+				value: 678, //最大数字
+				len: 4, //数字是几位数
+				time: 10000 // 执行时间
+			});
+		});
+	</script>
+</body>
+</html>
